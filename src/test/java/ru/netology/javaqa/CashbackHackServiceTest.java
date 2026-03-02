@@ -1,7 +1,7 @@
 package ru.netology.javaqa;
 
-import org.testng.annotations.Test;
-import static org.testng.Assert.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
 
@@ -17,20 +17,20 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
 
 
-        assertEquals(actual, expected, "Остаток до кэшбэка должен быть 500 рублей");
+        assertEquals("Остаток до кэшбэка должен быть 500 рублей", expected, actual);
     }
 
     @Test
     public void shouldReturn1000() {
 
         int amount = 1000;
-        int expected = 1000;
+        int expected = 0;
 
 
         int actual = service.remain(amount);
 
 
-        assertEquals(actual, expected, "При сумме кратной 1000 остаток должен быть 1000");
+        assertEquals("При сумме кратной 1000 остаток должен быть 0", expected, actual);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
 
 
-        assertEquals(actual, expected, "Остаток до кэшбэка должен быть 200 рублей");
+        assertEquals("Остаток до кэшбэка должен быть 200 рублей", expected, actual);
     }
 
     @Test
@@ -55,7 +55,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
 
 
-        assertEquals(actual, expected, "Остаток до кэшбэка должен быть 750 рублей");
+        assertEquals("Остаток до кэшбэка должен быть 750 рублей", expected, actual);
     }
 
     @Test
@@ -68,7 +68,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
 
 
-        assertEquals(actual, expected, "При нулевой сумме остаток должен быть 1000");
+        assertEquals("При нулевой сумме остаток должен быть 1000", expected, actual);
     }
 
     @Test
@@ -81,7 +81,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
 
 
-        assertEquals(actual, expected, "Остаток до кэшбэка должен быть 300 рублей");
+        assertEquals("Остаток до кэшбэка должен быть 300 рублей", expected, actual);
     }
 
 }
