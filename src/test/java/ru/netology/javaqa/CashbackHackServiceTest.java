@@ -24,13 +24,13 @@ public class CashbackHackServiceTest {
     public void shouldReturn1000() {
 
         int amount = 1000;
-        int expected = 1000;
+        int expected = 0;
 
 
         int actual = service.remain(amount);
 
 
-        assertEquals(actual, expected, "При сумме кратной 1000 остаток должен быть 1000");
+        assertEquals(actual, expected, "При сумме кратной 1000 остаток должен быть 0");
     }
 
     @Test
